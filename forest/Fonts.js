@@ -13,16 +13,16 @@
 const Liana = require('forest-express-mongoose');
 
 Liana.collection('fonts', {
-    actions: [
-        {
-            name : 'addFont',
-            fields: [
-                {
-                    field : 'name',
-                    type: 'String'
-                }
-            ]
-        }
-    ]
+	actions: [
+		{
+			name: 'addFont',
+			fields: [
+				{
+					field: 'name',
+					type: 'String',
+				},
+			],
+		},
+	],
 });
 

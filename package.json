@@ -15,5 +15,10 @@
     "forest-express-mongoose": "^2.1.0",
     "express-cors": "git://github.com/ForestAdmin/express-cors.git",
     "mongoose": "^5.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
   }
 }
