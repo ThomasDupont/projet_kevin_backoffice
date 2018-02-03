@@ -29,7 +29,7 @@ class Main {
             next();
         });
 
-        mongoose.connect(process.env.DATABASE_URL, {
+        mongoose.connect(process.env.MONGODB_URI, {
             promiseLibrary: global.Promise
         });
         mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
