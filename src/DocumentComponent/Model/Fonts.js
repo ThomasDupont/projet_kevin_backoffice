@@ -14,7 +14,8 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema({
     name: String,
     tags: [String],
-    downloadLink: String
+    downloadLink: String,
+    createdAt: Date
 });
 
-module.exports = mongoose.model('User', schema, 'user');
+module.exports = mongoose.model('Fonts', schema, 'fonts');
