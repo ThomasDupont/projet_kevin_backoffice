@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-global.ROOT = __dirname;
 const express = require('express');
 
 const app = express();
