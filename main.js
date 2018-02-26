@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 const CONF = require('./config/conf');
-const controllerFactory = require('./app/ControllerFactory');
+const Render = require('./app/Render');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -13,8 +13,9 @@ const mongoose = require('mongoose');
  *
  * @author Thomas Dupont
  */
-class Main {
+class Main extends Render {
 	constructor() {
+	    super();
 		app.use(bodyParser.urlencoded({ extended: false }));
 		// parse application/json
 		app.use(bodyParser.json());
@@ -52,19 +53,6 @@ class Main {
 		app.get(CONF.APIURL, (req, res) => {
 			this.render('Main', 'main', req, res);
 		});
-	}
-
-	/**
-     *
-     * @param c Controller
-     * @param m Method
-     * @param req The request
-     * @param res The reponse event
-     */
-	async render(c, m, req, res) {
-		const result = await controllerFactory.init(c, m, req);
-		res.status(result.statusCode);
-		res.send(result);
 	}
 }
 

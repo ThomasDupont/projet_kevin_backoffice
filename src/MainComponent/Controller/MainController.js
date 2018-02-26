@@ -1,12 +1,16 @@
 const CONF = require('./../../../config/conf');
+const Response = require('../../../app/Response');
 
 /**
  * Main controller class
  */
 class MainController {
+	static mainAction(req) {
+        return new Response(false, 400, { message: 'api ok' });
+	}
 
-	constructor () {
-		/*
+    static importAction(req) {
+        /*
 		convert Groupe_10.png -define histogram:unique-colors=true -colors 4 -format %c  histogram:info:-
 
 		     51920: ( 50, 77, 92,255) #324D5CFF srgba(50,77,92,0.999793)
@@ -14,10 +18,7 @@ class MainController {
 			 66274: (236, 89, 75,255) #EC594BFF srgba(236,89,75,0.999991)
 			 57186: (240,202, 77,255) #F0CA4DFF srgba(240,202,77,1)
 		 */
-	}
-	mainAction(req) {
-		return { status: 'ok', message: 'api ok', statusCode: 200 };
-	}
+    }
 }
 
 module.exports = new MainController();
